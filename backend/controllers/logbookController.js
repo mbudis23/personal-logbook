@@ -26,7 +26,7 @@ exports.updateLog = async (req, res) => {
     const { id } = req.params;
     const { title, description, date } = req.body;
 
-    const updateData = { title, description, date };
+    const updateData = { title, description, category, date };
 
     const existingLog = await Logbook.findById(id);
     if (!existingLog) {
