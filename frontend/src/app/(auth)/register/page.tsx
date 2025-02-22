@@ -1,11 +1,21 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function RegisterPage() {
   const router = useRouter();
-  const Register = () => {
-    router.push("/login");
+  const [loading, setLoading] = useState(false);
+  const handleRegister = async () => {
+    try {
+      setLoading(true);
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      router.push("/login");
+    } catch (error) {
+      console.error("Click button error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <main className="bg-white text-black min-h-screen min-w-full flex items-center justify-center p-4">
@@ -21,16 +31,28 @@ export default function RegisterPage() {
             placeholder="Muhammad Budi Setiawan"
           />
           <label>Email</label>
-          <input type="email" placeholder="warwinkblue@gmail.com" />
+          <input
+            className="outline-none"
+            type="email"
+            placeholder="warwinkblue@gmail.com"
+          />
           <label>Password</label>
-          <input type="password" placeholder="8UD18ud1" />
+          <input
+            className="outline-none"
+            type="password"
+            placeholder="8UD18ud1"
+          />
         </div>
 
-        <button className="bg-black text-white rounded-sm " onClick={Register}>
-          Sign Up
+        <button
+          onClick={handleRegister}
+          className="bg-black text-white rounded-sm"
+          disabled={loading} // Mencegah user menekan tombol berkali-kali
+        >
+          {loading ? "Processing..." : "Register"}
         </button>
         <p className="text-center">
-          Already have an account? <Link href={"/"}>Login</Link>
+          Already have an account? <Link href={"/login"}>Login</Link>
         </p>
         <p>{"\u00A0"}</p>
       </form>
