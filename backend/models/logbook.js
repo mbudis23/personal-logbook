@@ -8,7 +8,7 @@ const LogbookSchema = new mongoose.Schema(
       required: true,
     },
     title: { type: String, required: true },
-    description: { type: String, required: true },
+    description: { type: String },
     date: { type: Date, default: Date.now },
     category: {
       type: String,

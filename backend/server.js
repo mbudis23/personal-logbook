@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/authRoutes");
+const logbookRoutes = require("./routes/logbookRoutes");
 
 require("dotenv").config();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 connectDB();
 
 app.use("/auth", authRoutes);
+app.use("/logbook", logbookRoutes);
 
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
