@@ -136,7 +136,7 @@ Berikut adalah alur sistem dalam menangani proses CRUD logbook:
 
 ### Stuktur Database
 
-````mermaid
+```mermaid
 erDiagram
     USER {
         ObjectId userId PK
@@ -159,9 +159,7 @@ erDiagram
     }
 
     USER ||--o{ LOGBOOK : has
-
-
-
+```
 
 ### API Endpoints (ExpressJS Routes)
 
@@ -284,7 +282,7 @@ Pages adalah implementasi akhir dari template dengan data dinamis. Daftar PAges 
 |   ├── .env
 ├── /frontend
 ├── README.md
-````
+```
 
 ## Instalasi & Konfigurasi
 
