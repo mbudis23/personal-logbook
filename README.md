@@ -136,7 +136,7 @@ Berikut adalah alur sistem dalam menangani proses CRUD logbook:
 
 ### Stuktur Database
 
-```mermaid
+```bash
 erDiagram
     USER {
         ObjectId userId PK
