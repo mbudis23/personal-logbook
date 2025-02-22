@@ -158,7 +158,8 @@ erDiagram
         date updatedAt
     }
 
-    USER ||--o{ LOGBOOK : "has"
+    USER ||--o{ LOGBOOK : has
+
 
 
 
