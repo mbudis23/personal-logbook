@@ -136,7 +136,7 @@ Berikut adalah alur sistem dalam menangani proses CRUD logbook:
 
 ### Stuktur Database
 
-```bash
+```mermaid
 erDiagram
     USER {
         ObjectId userId PK
@@ -151,12 +151,12 @@ erDiagram
         ObjectId userId FK
         string title
         string description
-        date date
+        date logDate
         string category "enum: Work, Study, Personal, Other"
         date createdAt
         date updatedAt
     }
-    USER || --o{ LOGBOOK : "has"}
+    USER || --o{ LOGBOOK : "has"
 ```
 
 ### API Endpoints (ExpressJS Routes)
