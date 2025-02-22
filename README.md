@@ -146,6 +146,7 @@ erDiagram
         date createdAt
         date updatedAt
     }
+
     LOGBOOK {
         ObjectId logbookId PK
         ObjectId userId FK
@@ -156,7 +157,9 @@ erDiagram
         date createdAt
         date updatedAt
     }
+
     USER ||--o{ LOGBOOK : "has"
+
 
 
 ### API Endpoints (ExpressJS Routes)
